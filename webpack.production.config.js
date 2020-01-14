@@ -111,13 +111,13 @@ module.exports = {
         test: /\.(scss|css)/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader", // translates CSS into CommonJS
           {
-            loader: "sass-loader", // compiles Sass to CSS, using Node Sass by default
+            loader: "css-loader", // compiles Sass to CSS, using Node Sass by default
             options: {
-              url: true
-            } 
-          }  
+              url: false
+            }
+          }   , // translates CSS into CommonJS
+           "sass-loader", // compiles Sass to CSS, using Node Sass by default 
         ]
       },
       {
