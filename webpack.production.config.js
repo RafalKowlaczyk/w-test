@@ -100,7 +100,7 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            exclude: /node_modules/,
+            // exclude: /node_modules/,
             options: {
               presets: ["@babel/preset-env"]
             }
@@ -111,7 +111,7 @@ module.exports = {
         test: /\.(scss|css)/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader ? url=false", // translates CSS into CommonJS
+          "css-loader?url=false", // translates CSS into CommonJS
           "sass-loader" // compiles Sass to CSS, using Node Sass by default
         ]
       },
