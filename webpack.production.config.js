@@ -112,7 +112,12 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader", // translates CSS into CommonJS
-          "sass-loader?url=true" // compiles Sass to CSS, using Node Sass by default
+          {
+            loader: "sass-loader", // compiles Sass to CSS, using Node Sass by default
+            options: {
+              url: true
+            } 
+          }  
         ]
       },
       {
