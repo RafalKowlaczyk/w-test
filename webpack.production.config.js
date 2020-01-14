@@ -111,13 +111,8 @@ module.exports = {
         test: /\.(scss|css)/,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader", // compiles Sass to CSS, using Node Sass by default
-            options: {
-              url: false
-            }
-          }   , // translates CSS into CommonJS
-           "sass-loader", // compiles Sass to CSS, using Node Sass by default 
+          "css-loader?url=true", // translates CSS into CommonJS
+          "sass-loader" // compiles Sass to CSS, using Node Sass by default
         ]
       },
       {
@@ -126,7 +121,7 @@ module.exports = {
           loader: "file-loader",
           options: {
             name: "[name].[ext]",
-            outputPath: "img/",
+            outputPath: "assets/img/",
             publicPath: "img/"
           }
         }
