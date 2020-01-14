@@ -122,7 +122,7 @@ module.exports = {
           options: {
             name: "[name].[ext]",
             outputPath: "assets/img/",
-            publicPath: "img/"
+            publicPath: "assets/img/"
           }
         }
       }
@@ -142,7 +142,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: "src/assets/img/popup_comments",
-        to: "img"
+        to: "assets/img"
       }
     ]),
     new ImageminPlugin({
